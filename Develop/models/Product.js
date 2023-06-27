@@ -10,7 +10,20 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
+    product_name: {
+      type: DataTypes.STRING
+    },
+    price: {
+      type: DataTypes.DECIMAL
+    },
+   stock: {
+    type: DataTypes.INTEGER
+   },
+   category_id: {
+    type: DataTypes.INTEGER
+   }
   },
+  
   {
     sequelize,
     timestamps: false,
@@ -21,3 +34,8 @@ Product.init(
 );
 
 module.exports = Product;
+
+// product_name: 'Plain T-Shirt',
+// price: 14.99,
+// stock: 14,
+// category_id: 1,

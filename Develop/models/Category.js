@@ -8,7 +8,7 @@ Category.init(
   {
     // define columns
     product_name: {
-      category_name: DataTypes.STRING
+      type: DataTypes.STRING
     },
   },
   {

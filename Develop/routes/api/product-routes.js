@@ -4,11 +4,11 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 // get all products
-router.get('../api/products',async (req, res) => {
+router.get('/', async (req, res) => {
   // find all products
   try {
   const productData = await Product.findAll({
-    include: [{ model: Category }, { model: Tag}],
+    include: [{ model: Category }],
   });
   res.status(200).json(productData);
 } catch (err) {
@@ -22,8 +22,8 @@ router.get('../api/products',async (req, res) => {
 // get one product
 router.get('/:id', async (req, res) => {
    try {
-    const productData = await Driver.findByPk(req.params.id, {
-      include: [{ model: Category }, { model: Tag }],
+    const productData = await Product.findByPk(req.params.id, {
+      include: [{ model: Category }],
     });
 
     if (!productData) {
